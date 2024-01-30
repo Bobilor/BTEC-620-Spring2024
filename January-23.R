@@ -36,4 +36,22 @@ Treatment<-rowMeans(Treatment)
 Fold_change<-Treatment-Control
 
 
+#Interpret these results
+#any value > than 2 is a Up-regulated gene in the treatment
+#any value < than -2 is a Down-regulated gene in the treatment
+
+
+#Export the data in csv file
+write.csv(Fold_change, "Fold_change.csv")
+
+
+##########################
+#creating a variable called data frame 
+Fold_change<- as.data.frame(Fold_change)
+
+#Print the conditional statements
+Fold_change[which(Fold_change$Fold_change>2),]
+Fold_change[which(Fold_change$Fold_change>-1),]
+
+
 
